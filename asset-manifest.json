@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/labb2-dynamisk-cv-sida/static/css/main.3682366b.css",
+    "main.js": "/labb2-dynamisk-cv-sida/static/js/main.6d4f0952.js",
+    "static/js/592.d345a370.chunk.js": "/labb2-dynamisk-cv-sida/static/js/592.d345a370.chunk.js",
+    "static/media/Satoshi-Variable.ttf": "/labb2-dynamisk-cv-sida/static/media/Satoshi-Variable.536fda9b164542087fc7.ttf",
+    "static/media/Satoshi-Variable.woff2": "/labb2-dynamisk-cv-sida/static/media/Satoshi-Variable.353a66cdd8922bb63107.woff2",
+    "static/media/Satoshi-Variable.woff": "/labb2-dynamisk-cv-sida/static/media/Satoshi-Variable.4db206aaad2132de9db7.woff",
+    "index.html": "/labb2-dynamisk-cv-sida/index.html",
+    "main.3682366b.css.map": "/labb2-dynamisk-cv-sida/static/css/main.3682366b.css.map",
+    "main.6d4f0952.js.map": "/labb2-dynamisk-cv-sida/static/js/main.6d4f0952.js.map",
+    "592.d345a370.chunk.js.map": "/labb2-dynamisk-cv-sida/static/js/592.d345a370.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3682366b.css",
+    "static/js/main.6d4f0952.js"
+  ]
+}
