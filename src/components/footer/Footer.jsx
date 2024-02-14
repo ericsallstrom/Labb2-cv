@@ -16,13 +16,17 @@ const Footer = () => {
                     target="_blank"
                 >
                     <img
-                        src="/icons/linkedin-icon.png"
+                        src={`${process.env.PUBLIC_URL}/icons/linkedin-icon.png`}
                         alt="LinkedIn logo"
                         className="social-link"
                     />
                 </NavLink>
                 <NavLink to="https://github.com/ericsallstrom" target="_blank">
-                    <img src="/icons/github-icon.png" alt="GitHub logo" className="social-link" />
+                    <img
+                        src={`${process.env.PUBLIC_URL}/icons/github-icon.png`}
+                        alt="GitHub logo"
+                        className="social-link"
+                    />
                 </NavLink>
             </div>
             <div className="web-guidelines">

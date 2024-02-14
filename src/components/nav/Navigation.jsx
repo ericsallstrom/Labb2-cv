@@ -46,7 +46,11 @@ const Navigation = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <div onClick={closeSidebar}>
-                    <img className="logo" src="/img/logo-nav.jpg" alt="Logo" />
+                    <img
+                        className="logo"
+                        src={`${process.env.PUBLIC_URL}/img/logo-nav.jpg`}
+                        alt="Logo"
+                    />
                 </div>
                 <ul className="nav-links">
                     {/* <div className="nav-links-container">{renderNavItems()}</div> */}
