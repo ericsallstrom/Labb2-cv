@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Labb2-cv/static/css/main.14fd33a5.css",
-    "main.js": "/Labb2-cv/static/js/main.e34efae1.js",
+    "main.js": "/Labb2-cv/static/js/main.0ec455a3.js",
     "static/js/592.d345a370.chunk.js": "/Labb2-cv/static/js/592.d345a370.chunk.js",
     "static/media/Satoshi-Variable.ttf": "/Labb2-cv/static/media/Satoshi-Variable.536fda9b164542087fc7.ttf",
     "static/media/Satoshi-Variable.woff2": "/Labb2-cv/static/media/Satoshi-Variable.353a66cdd8922bb63107.woff2",
     "static/media/Satoshi-Variable.woff": "/Labb2-cv/static/media/Satoshi-Variable.4db206aaad2132de9db7.woff",
     "index.html": "/Labb2-cv/index.html",
     "main.14fd33a5.css.map": "/Labb2-cv/static/css/main.14fd33a5.css.map",
-    "main.e34efae1.js.map": "/Labb2-cv/static/js/main.e34efae1.js.map",
+    "main.0ec455a3.js.map": "/Labb2-cv/static/js/main.0ec455a3.js.map",
     "592.d345a370.chunk.js.map": "/Labb2-cv/static/js/592.d345a370.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14fd33a5.css",
-    "static/js/main.e34efae1.js"
+    "static/js/main.0ec455a3.js"
   ]
 }
