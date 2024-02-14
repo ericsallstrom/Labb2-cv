@@ -1,8 +1,8 @@
-.footer-container {    
+.footer-container {
     width: 100%;
     background-color: #ee691141;
-    padding: 1em 4em;  
-    font-weight: 500;  
+    padding: 1em 4em;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,8 +11,9 @@
     box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2);
     color: #000;
 }
-.name-copyright, .web-guidelines {    
-    width: 100%;    
+.name-copyright,
+.web-guidelines {
+    width: 100%;
 }
 .name-copyright span {
     font-size: 0.9em;
@@ -30,11 +31,11 @@
 .web-guidelines-link {
     text-decoration: none;
     color: #000;
-    font-size: 1.1em;    
+    font-size: 1em;
 }
-.footer-container a:hover {    
-    filter: invert(1);    
-} 
+.footer-container a:hover {
+    filter: invert(1);
+}
 
 @media screen and (max-width: 600px) {
     .footer-container {
@@ -47,7 +48,7 @@
     .footer-container {
         font-size: 0.7em;
         padding: 1em;
-    }    
+    }
     .social-link {
         width: 20px;
     }
