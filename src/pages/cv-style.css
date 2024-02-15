@@ -1,11 +1,5 @@
 .cv-container {
-    margin: 2em 1.5em;
-    background-color: #548d6cb9;
-    border-radius: 10px;
-    padding: 2em;
-    box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.2);
     font-weight: 500;
-
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -56,6 +50,11 @@
 .divider {
     width: 100%;
     border: 1px solid #fff;
+}
+.cv-content h2,
+h3,
+p {
+    transition: font-size 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {

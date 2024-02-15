@@ -3,14 +3,14 @@ import useFetch from '../useFetch';
 import '../pages/cv-style.css';
 
 const CV = () => {
-    const { data, error, isLoading } = useFetch();
+    const { data, error, isLoading } = useFetch(`${process.env.PUBLIC_URL}/data/db.json`);
 
     return (
         <section>
             {isLoading && <div>Loading...</div>}
             {error && <div style={{ color: 'red' }}>An error occured: {error}</div>}
             {data && (
-                <div className="cv-container">
+                <div className="cv-container global-container-style">
                     <div className="cv-content">
                         <div className="title-container">
                             <hr className="hyphen" />

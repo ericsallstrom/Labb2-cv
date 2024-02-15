@@ -1,17 +1,17 @@
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;        
+    left: 0;
     width: 100%;
     z-index: 99;
     background-color: #548d6c;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);     
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
 .navbar ul {
-    margin: 0;    
+    margin: 0;
 }
 .navbar-container {
-    display: flex;                   
+    display: flex;
     padding: 1em 4em;
 }
 .logo {
@@ -19,16 +19,18 @@
 }
 .nav-links {
     width: 100%;
-    display: flex;    
+    display: flex;
     align-items: center;
-    justify-content: flex-end;            
+    justify-content: flex-end;
 }
 .nav-links .nav-link {
     margin-left: 2em;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
 }
 .nav-links .nav-link:hover {
     border-bottom: 2px solid #936d61;
-} 
+}
 .nav-link {
     text-decoration: none;
     text-transform: uppercase;
@@ -42,17 +44,17 @@
 .navbar .material-icons {
     color: rgba(252, 205, 143, 0.791);
     font-size: 36px;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; 
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .navbar .material-icons:hover {
     transform: scale(1.1);
-    color: rgba(252, 205, 143, 0.935);  
+    color: rgba(252, 205, 143, 0.935);
 }
 .sidebar-container {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
     width: 250px;
     z-index: 10;
     background-color: #548d6ca5;
@@ -60,17 +62,19 @@
     box-shadow: -5px 0 12px rgba(0, 0, 0, 0.2);
     display: none;
     flex-direction: column;
-    align-items: start;       
+    align-items: start;
 }
 .sidebar-links {
     display: flex;
-    flex-direction: column;   
-    padding: 0; 
+    flex-direction: column;
+    padding: 0;
     width: 100%;
 }
 .sidebar-links .material-icons {
+    width: 0%;
     padding: 0.5em 0 0 0.5em;
-    margin-bottom: 65px;
+    margin-bottom: 48px;
+    text-decoration: none;
 }
 .sidebar-links .nav-link {
     padding: 0.5em 1.5em;
@@ -78,27 +82,26 @@
     transition: background-color 0.3s ease-in-out;
 }
 .sidebar-links .nav-link:hover {
-    background-color: #936d6194;    
+    background-color: #936d6194;
 }
-
 
 @media screen and (max-width: 768px) {
     .hideOnMobile {
-        display: none;        
+        display: none;
     }
-  }
-  
-  @media screen and (min-width: 769px) {
+}
+
+@media screen and (min-width: 769px) {
     .hideOnDesktop {
         display: none;
-    }   
-  }
-  
-  @media screen and (max-width: 400px) {
+    }
+}
+
+@media screen and (max-width: 400px) {
     .navbar-container {
         padding: 1em 2em;
     }
     .sidebar-container {
         width: 100%;
     }
-  }
+}
