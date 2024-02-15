@@ -37,5 +37,47 @@
             "institution": "NTI",
             "completion_year": "2022"
         }
+    ],
+    "projects": [
+        {
+            "id": 1,
+            "name": "Developed My First Website Using React",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 2,
+            "name": "Created a Database with Entity Framework and SQL Server",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 3,
+            "name": "Designed an App for a Fictional Bank - Group Project",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 4,
+            "name": "Implemented Generic Collections in C#",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 5,
+            "name": "Explored Polymorphism in Programming",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 6,
+            "name": "Studied Object Inheritance",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 7,
+            "name": "Developed a Numbers Game Application",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        },
+        {
+            "id": 8,
+            "name": "Constructed a Chess Board Application",
+            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+        }
     ]
 }
