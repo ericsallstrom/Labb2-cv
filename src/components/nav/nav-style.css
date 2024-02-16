@@ -99,7 +99,7 @@
 
 @media screen and (max-width: 400px) {
     .navbar-container {
-        padding: 1em 2em;
+        padding: 1em 10%;
     }
     .sidebar-container {
         width: 100%;

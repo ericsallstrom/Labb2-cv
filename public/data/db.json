@@ -41,43 +41,78 @@
     "projects": [
         {
             "id": 1,
-            "name": "Developed My First Website Using React",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "Labb2-cv",
+            "description": "Developed this portfolio website using React."
         },
         {
             "id": 2,
-            "name": "Created a Database with Entity Framework and SQL Server",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "Labb1_CV-sida",
+            "description": "Created my first website using HTML and JavaScript."
         },
         {
             "id": 3,
-            "name": "Designed an App for a Fictional Bank - Group Project",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "Labb4IndividuelltDatabasprojekt",
+            "description": "Constructed a database utilizing Entity Framework and SQL Server."
         },
         {
             "id": 4,
-            "name": "Implemented Generic Collections in C#",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "KrutangerHighSchoolDB",
+            "description": "Explored database scaffolding with Entity Framework and SQL Server"
         },
         {
             "id": 5,
-            "name": "Explored Polymorphism in Programming",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "BankApp_GroupProject",
+            "description": "Designed an application for a fictional bank as part of a group project."
         },
         {
             "id": 6,
-            "name": "Studied Object Inheritance",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "Labb8OOPGenericCollections",
+            "description": "Implemented generic collections in C#."
         },
         {
             "id": 7,
-            "name": "Developed a Numbers Game Application",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "Boksystem",
+            "description": "Developed a simple book library system."
         },
         {
             "id": 8,
-            "name": "Constructed a Chess Board Application",
-            "information": "The hunter to the husbandman Pays tribute since our love began, And to love-loyalty dedicates The phantom kills he meditates."
+            "name": "SchoolRegisterExercise",
+            "description": "Created an application for registering teachers and students for a fictional school."
+        },
+        {
+            "id": 9,
+            "name": "Labb7PolymorphismOOP",
+            "description": "Explored polymorphism in programming."
+        },
+        {
+            "id": 10,
+            "name": "Labb6OOPArv",
+            "description": "Studied object inheritance in OOP."
+        },
+        {
+            "id": 11,
+            "name": "GrunderOOPLabb5",
+            "description": "Explored the fundamentals of OOP."
+        },
+        {
+            "id": 12,
+            "name": "HospitalExcercise",
+            "description": "Executed a simple excercise on inheritance in OOP."
+        },
+        {
+            "id": 13,
+            "name": "NumbersGame",
+            "description": "Developed a numbers game application."
+        },
+        {
+            "id": 14,
+            "name": "ChessBoard",
+            "description": "Constructed a chess board application."
+        },
+        {
+            "id": 15,
+            "name": "MyFirstProgram",
+            "description": "My initial GitHub repository commitment."
         }
     ]
 }

@@ -1,8 +1,12 @@
+.home-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .home-content {
     display: flex;
     flex-direction: column;
-    color: #548d6c64;
-    background-color: aliceblue;
+    max-width: 800px;
     box-shadow: 6px 5px 1px rgba(0, 0, 0, 0.3);
 }
 .hex-container {
@@ -18,17 +22,17 @@
 }
 .hexagon:nth-child(1) {
     top: 0;
-    left: 50%;
+    left: 40%;
     margin-left: -50px;
 }
 .hexagon:nth-child(2) {
     top: 50%;
-    left: 25%;
+    left: 15%;
     margin-top: 0px;
 }
 .hexagon:nth-child(3) {
     top: 50%;
-    left: 75%;
+    left: 65%;
     margin-top: -50px;
 }
 .hexagon:before,
@@ -46,4 +50,36 @@
 .hexagon:after {
     bottom: -29px;
     border-top: 29px solid #548d6c;
+}
+.home-title {
+    padding: 1em;
+    color: #936d61;
+}
+
+@media screen and (max-width: 600px) {
+    .home-title {
+        font-size: 1.2em;
+    }
+    .hexagon:nth-child(1) {
+        top: 15%;
+        left: 30%;
+        margin-left: -50px;
+    }
+    .hexagon:nth-child(2) {
+        top: 50%;
+        left: 5%;
+        margin-top: 0px;
+    }
+    .hexagon:nth-child(3) {
+        top: 50%;
+        left: 45%;
+        margin-top: -50px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .home-title {
+        font-size: 1em;
+        margin-top: 200px;
+    }
 }

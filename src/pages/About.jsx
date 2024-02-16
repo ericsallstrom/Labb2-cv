@@ -7,11 +7,11 @@ const About = () => {
 
     return (
         <section>
-            {isLoading && <div>Loading...</div>}
-            {error && <div style={{ color: 'red' }}>An error occured: {error}</div>}
+            {isLoading && <div className="site-message">Loading...</div>}
+            {error && <div className="site-message">An error occured: {error}</div>}
             {data && (
                 <div className="about-container global-container-style">
-                    <h2 className="about-title">{data.about.title}</h2>
+                    <h2 className="global-title-style about-title">{data.about.title}</h2>
                     <p>{data.about.intro}</p>
                     <br />
                     <p>{data.about.as_a_developer}</p>

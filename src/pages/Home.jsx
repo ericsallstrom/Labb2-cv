@@ -3,13 +3,15 @@ import '../pages/home-style.css';
 
 const Home = () => {
     return (
-        <div className="home-content">
-            <div className="hex-container">
-                <div className="hexagon top"></div>
-                <div className="hexagon left"></div>
-                <div className="hexagon right"></div>
+        <div className="home-wrapper">
+            <div className="home-content">
+                <div className="hex-container">
+                    <div className="hexagon top"></div>
+                    <div className="hexagon left"></div>
+                    <div className="hexagon right"></div>
+                </div>
+                <h2 className="home-title">Eric Sällström - Software Engineer</h2>
             </div>
-            <h2>Eric Sällström - Software Engineer</h2>
         </div>
     );
 };

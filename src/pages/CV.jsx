@@ -7,8 +7,8 @@ const CV = () => {
 
     return (
         <section>
-            {isLoading && <div>Loading...</div>}
-            {error && <div style={{ color: 'red' }}>An error occured: {error}</div>}
+            {isLoading && <div className="site-message">Loading...</div>}
+            {error && <div className="site-message">An error occured: {error}</div>}
             {data && (
                 <div className="cv-container global-container-style">
                     <div className="cv-content">

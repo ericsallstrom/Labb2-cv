@@ -21,7 +21,6 @@
     font-family: 'Satoshi-Variable', 'Roboto Mono', sans-serif;
     padding-top: 12vh;
     min-height: 100vh;
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     background-color: #e2d4ba;
@@ -40,38 +39,40 @@
     padding: 2em;
     box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.2);
 }
-
-/*
-  576px for portrait phones
-  768px for tablets
-  992px for laptops
-  1200px for large devices
-*/
-
-/*
-.social-media-text {
-  font-family: 'Amatic SC', sans-serif;   
-  font-size: 1.7em; 
-  background-color: #5b83b1FF;    
-  padding: 0 0.5em;
-  border-radius: 4px;    
-  margin: auto;
-  margin-bottom: 10px;
-  max-width: 6em;
-  text-align: center;
-  transition: padding 0.3s ease-in-out;
+.site-message {
+    color: #000;
+    font-size: 2em;
 }
+.global-title-style {
+    text-transform: uppercase;
+    font-size: 1.6em;
+    background-color: rgba(252, 205, 143, 0.791);
+    color: #936d61;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px 12px;
 
-.arrow {
-  display: none;
+    transition: font-size 0.3s ease;
 }
+.global-btn-style {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.9px;
+    font-size: 0.7em;
+    color: #fff;
+    padding: 0.8em;
+    background-color: #936d61;
+    border-radius: 8px;
+    border: 1px solid rgba(252, 205, 143, 0.791);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 
-.social-media-text:hover {
-  background-color: rgb(113, 163, 220);
-  padding: 0.1em 0.5em 0;    
-
-  .material-symbols-outlined {
-      display: block;
-  }
+    transition: opacity 0.3s ease;
 }
-*/
+.global-btn-style:hover {
+    background-color: rgba(32, 73, 94, 0.582);
+}
+.global-btn-style:active {
+    opacity: 0.8;
+}

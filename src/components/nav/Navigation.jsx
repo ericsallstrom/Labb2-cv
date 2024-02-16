@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../nav/nav-style.css';
 
 const Navigation = () => {
     const [sidebarDisplay, setSidebarDisplay] = useState('none');
-    const [currentPath, setCurrentPath] = useState('/');
-    const location = useLocation();
+    // const [currentPath, setCurrentPath] = useState('/');
+    // const location = useLocation();
     const sidebarRef = useRef(null);
 
-    useEffect(() => {
-        setCurrentPath(location.pathname);
-    }, [location.pathname]);
+    // useEffect(() => {
+    //     setCurrentPath(location.pathname);
+    // }, [location.pathname]);
 
     useEffect(() => {
         const closeSidebarOnOutsideClick = (e) => {
@@ -47,8 +47,7 @@ const Navigation = () => {
             <NavLink
                 key={navLink.to}
                 className={`nav-link ${hideOnDesktop ? 'hideOnDesktop' : 'hideOnMobile'}`}
-                activeClassName={currentPath === navLink.to ? 'active' : ''}
-                exact
+                // activeClassName={currentPath === navLink.to ? 'active' : ''}
                 to={navLink.to}
                 onClick={hideOnDesktop ? toggleSidebar : undefined}
             >

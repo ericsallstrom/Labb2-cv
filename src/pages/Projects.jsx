@@ -1,47 +1,78 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../pages/projects-style.css';
 import useFetch from '../useFetch';
 import { NavLink } from 'react-router-dom';
 
 const Projects = () => {
-    const { data, error, isLoading } = useFetch('https://api.github.com/users/ericsallstrom/repos');
+    const token = process.env.REACT_APP_GITHUB_TOKEN;
+    const {
+        data: githubData,
+        error: githubError,
+        isLoading: githubIsLoading,
+    } = useFetch('https://api.github.com/users/ericsallstrom/repos', token);
+    const {
+        data: localData,
+        error: localError,
+        isLoading: localIsLoading,
+    } = useFetch(`${process.env.PUBLIC_URL}/data/db.json`);
+
     const [projects, setProjects] = useState([]);
     const [expandedProject, setExpandedProject] = useState(null);
+    const [projectDescriptions, setProjectDescriptions] = useState({});
+    const expandedElementRef = useRef(null);
 
     useEffect(() => {
-        if (data) {
+        if (githubData) {
             // Sortera repositories baserat på created_at (från nyast till äldst)
-            const sortedProjects = [...data].sort(
+            const sortedProjects = [...githubData].sort(
                 (a, b) => new Date(b.created_at) - new Date(a.created_at)
             );
             setProjects(sortedProjects);
         }
-    }, [data]);
+    }, [githubData]);
 
-    const handleProjectClick = (projectId) => {
-        setExpandedProject((projectExpanded) => (projectExpanded === projectId ? null : projectId));
+    useEffect(() => {
+        if (localData) {
+            setProjects(localData.projects);
+            // reduce-metoden används för att skapa ett objekt ('descriptions'), där varje projekts namn används som
+            // nyckel och dess tillhörande beskrivning som värde för att få tillgång till beskrivningen av varje projekt.
+            const descriptions = localData.projects.reduce((acc, project) => {
+                acc[project.name] = project.description;
+                return acc;
+            }, {});
+            setProjectDescriptions(descriptions);
+        }
+    }, [localData]);
 
-        setTimeout(() => {
+    useEffect(() => {
+        if (expandedProject !== null) {
             const expandedElement = document.querySelector('.project-info');
 
             if (expandedElement) {
-                const scrollPosition = expandedElement.offsetTop - window.innerHeight / 2;
-
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth',
-                });
+                expandedElementRef.current = expandedElement;
+                expandedElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-        }, 0);
+        }
+    }, [expandedProject]);
+
+    const handleProjectClick = (projectId) => {
+        console.log('handleProjectClick triggered with project id:', projectId);
+        setExpandedProject((projectExpanded) => (projectExpanded === projectId ? null : projectId));
     };
 
     return (
         <section>
-            {isLoading && <div>Loading projects...</div>}
-            {error && <div style={{ color: 'red' }}>An error occurred: {error}</div>}
-            {data && (
+            {(githubIsLoading || localIsLoading) && (
+                <div className="site-message">Loading projects...</div>
+            )}
+            {(githubError || localError) && (
+                <div className="site-message">
+                    An error occured: {githubError} {localError}
+                </div>
+            )}
+            {githubData && localData && (
                 <div className="projects-container global-container-style">
-                    <h3 className="repo-label">GitHub Repositories</h3>
+                    <h2 className="repo-label">GitHub Repositories</h2>
                     {projects.map((project) => (
                         <div className="project-content" key={project.id}>
                             <div
@@ -64,13 +95,16 @@ const Projects = () => {
                                 )}
                             </div>
                             {expandedProject === project.id && (
-                                <div className="project-info">
+                                <div className="project-info" ref={expandedElementRef}>
+                                    <p className="project-description">
+                                        {projectDescriptions[project.name]}
+                                    </p>
                                     <NavLink
-                                        className="project-link"
+                                        className="global-btn-style project-link"
                                         to={project.html_url}
                                         target="_blank"
                                     >
-                                        Go To Project
+                                        View Repository
                                     </NavLink>
                                 </div>
                             )}

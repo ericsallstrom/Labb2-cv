@@ -3,16 +3,7 @@
     font-size: 1.2em;
 }
 .about-title {
-    text-transform: uppercase;
-    font-size: 1.6em;
-    background-color: rgba(252, 205, 143, 0.791);
-    color: #936d61;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 10px 12px;
     margin: 0 0 20px -15px;
-
-    transition: font-size 0.3s ease;
 }
 
 @media screen and (max-width: 400px) {
