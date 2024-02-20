@@ -38,7 +38,7 @@
     letter-spacing: 1px;
     color: rgb(252, 205, 143);
 }
-.active {
+.navbar .active {
     color: #fff;
 }
 .navbar .material-icons {

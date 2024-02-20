@@ -8,7 +8,7 @@ const CV = () => {
     return (
         <section>
             {isLoading && <div className="site-message">Loading...</div>}
-            {error && <div className="site-message">An error occured: {error}</div>}
+            {error && <div className="site-message">{error}</div>}
             {data && (
                 <div className="cv-container global-container-style">
                     <div className="cv-content">

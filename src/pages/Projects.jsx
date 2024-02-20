@@ -67,7 +67,7 @@ const Projects = () => {
             )}
             {(githubError || localError) && (
                 <div className="site-message">
-                    An error occured: {githubError} {localError}
+                    {githubError} {localError}
                 </div>
             )}
             {githubData && localData && (

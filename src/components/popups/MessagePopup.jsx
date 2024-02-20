@@ -1,7 +1,7 @@
 import React from 'react';
-import '../popup/popup-style.css';
+import './popup-style.css';
 
-const Popup = ({ closePopup }) => {
+const MessagePopup = ({ closePopup }) => {
     return (
         <div className="popup-container visible" id="popup">
             <div className="popup-content">
@@ -14,4 +14,4 @@ const Popup = ({ closePopup }) => {
     );
 };
 
-export default Popup;
+export default MessagePopup;

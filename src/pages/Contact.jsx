@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import Popup from '../components/popup/Popup';
+import MessagePopup from '../components/popups/MessagePopup';
 import './contact-style.css';
 
 const Contact = () => {
@@ -59,7 +59,7 @@ const Contact = () => {
                     Send Message
                 </button>
             </form>
-            {isPopupVisible && <Popup closePopup={closePopup} />}
+            {isPopupVisible && <MessagePopup closePopup={closePopup} />}
         </section>
     );
 };

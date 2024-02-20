@@ -1,16 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import BgColorChanger from '../BgColorChanger';
 import '../nav/nav-style.css';
 
-const Navigation = () => {
-    const [sidebarDisplay, setSidebarDisplay] = useState('none');
-    // const [currentPath, setCurrentPath] = useState('/');
-    // const location = useLocation();
-    const sidebarRef = useRef(null);
+const Navigation = ({ onBgColorChange }) => {
+    const navLinks = [
+        { to: '/', label: 'Home' },
+        { to: '/about', label: 'About' },
+        { to: '/cv', label: 'CV' },
+        { to: '/projects', label: 'Projects' },
+        { to: '/contact', label: 'Contact' },
+    ];
 
-    // useEffect(() => {
-    //     setCurrentPath(location.pathname);
-    // }, [location.pathname]);
+    const [sidebarDisplay, setSidebarDisplay] = useState('none');
+    const sidebarRef = useRef(null);
 
     useEffect(() => {
         const closeSidebarOnOutsideClick = (e) => {
@@ -26,14 +29,6 @@ const Navigation = () => {
         };
     }, []);
 
-    const navLinks = [
-        { to: '/', label: 'Home' },
-        { to: '/about', label: 'About' },
-        { to: '/cv', label: 'CV' },
-        { to: '/projects', label: 'Projects' },
-        { to: '/contact', label: 'Contact' },
-    ];
-
     const toggleSidebar = () => {
         setSidebarDisplay((prevDisplay) => (prevDisplay === 'none' ? 'flex' : 'none'));
     };
@@ -47,7 +42,6 @@ const Navigation = () => {
             <NavLink
                 key={navLink.to}
                 className={`nav-link ${hideOnDesktop ? 'hideOnDesktop' : 'hideOnMobile'}`}
-                // activeClassName={currentPath === navLink.to ? 'active' : ''}
                 to={navLink.to}
                 onClick={hideOnDesktop ? toggleSidebar : undefined}
             >
@@ -60,11 +54,7 @@ const Navigation = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <div>
-                    <img
-                        className="logo"
-                        src={`${process.env.PUBLIC_URL}/img/logo-nav.jpg`}
-                        alt="Logo"
-                    />
+                    <BgColorChanger onBgColorChange={onBgColorChange} />
                 </div>
                 <ul className="nav-links">
                     {/* <div className="nav-links-container">{renderNavItems()}</div> */}

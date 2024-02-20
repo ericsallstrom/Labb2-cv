@@ -8,7 +8,7 @@ const About = () => {
     return (
         <section>
             {isLoading && <div className="site-message">Loading...</div>}
-            {error && <div className="site-message">An error occured: {error}</div>}
+            {error && <div className="site-message">{error}</div>}
             {data && (
                 <div className="about-container global-container-style">
                     <h2 className="global-title-style about-title">{data.about.title}</h2>
