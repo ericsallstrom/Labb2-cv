@@ -22,14 +22,17 @@ const ModalPopup = () => {
     }, [userInput]);
 
     const checkUserInput = (input) => {
+        console.log('User input: ', input);
         if (input === 'python') {
+            console.log('Opening popup.');
             setPopupOpen(true);
-            setUserInput('');
         }
     };
 
     const closePopup = () => {
-        setPopupOpen(!isPopupOpen);
+        console.log('Closing popup.');
+        setPopupOpen(false);
+        setUserInput('');
     };
 
     return (
