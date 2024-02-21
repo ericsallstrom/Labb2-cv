@@ -1,9 +1,9 @@
 import React from 'react';
-import useFetch from '../useFetch';
+import FetchJson from '../components/FetchJson';
 import '../pages/cv-style.css';
 
 const CV = () => {
-    const { data, error, isLoading } = useFetch(`${process.env.PUBLIC_URL}/data/db.json`);
+    const { data, error, isLoading } = FetchJson();
 
     return (
         <section>

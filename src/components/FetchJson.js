@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useFetch = (url, token) => {
+const FetchJson = () => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -8,12 +8,7 @@ const useFetch = (url, token) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // const response = await fetch(`${process.env.PUBLIC_URL}/data/db.json`);
-                const response = await fetch(url, {
-                    headers: {
-                        Authorization: `token ${token}`,
-                    },
-                });
+                const response = await fetch(`${process.env.PUBLIC_URL}/data/db.json`);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -30,9 +25,9 @@ const useFetch = (url, token) => {
         };
 
         fetchData();
-    }, [url, token]);
+    }, []);
 
     return { data, isLoading, error };
 };
 
-export default useFetch;
+export default FetchJson;

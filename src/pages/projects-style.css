@@ -49,6 +49,7 @@
 }
 .project-link {
     max-width: 150px;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 840px) {

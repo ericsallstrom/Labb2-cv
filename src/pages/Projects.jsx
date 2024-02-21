@@ -1,48 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../pages/projects-style.css';
-import useFetch from '../useFetch';
 import { NavLink } from 'react-router-dom';
+import FetchProjects from '../components/FetchProjects';
+import '../pages/projects-style.css';
 
 const Projects = () => {
-    const token = process.env.REACT_APP_GITHUB_TOKEN;
-    const {
-        data: githubData,
-        error: githubError,
-        isLoading: githubIsLoading,
-    } = useFetch('https://api.github.com/users/ericsallstrom/repos', token);
-    const {
-        data: localData,
-        error: localError,
-        isLoading: localIsLoading,
-    } = useFetch(`${process.env.PUBLIC_URL}/data/db.json`);
-
+    const { projects: data, error, isLoading } = FetchProjects();
     const [projects, setProjects] = useState([]);
     const [expandedProject, setExpandedProject] = useState(null);
-    const [projectDescriptions, setProjectDescriptions] = useState({});
     const expandedElementRef = useRef(null);
 
     useEffect(() => {
-        if (githubData) {
+        if (data) {
             // Sortera repositories baserat på created_at (från nyast till äldst)
-            const sortedProjects = [...githubData].sort(
+            const sortedProjects = [...data].sort(
                 (a, b) => new Date(b.created_at) - new Date(a.created_at)
             );
             setProjects(sortedProjects);
         }
-    }, [githubData]);
-
-    useEffect(() => {
-        if (localData) {
-            setProjects(localData.projects);
-            // reduce-metoden används för att skapa ett objekt ('descriptions'), där varje projekts namn används som
-            // nyckel och dess tillhörande beskrivning som värde för att få tillgång till beskrivningen av varje projekt.
-            const descriptions = localData.projects.reduce((acc, project) => {
-                acc[project.name] = project.description;
-                return acc;
-            }, {});
-            setProjectDescriptions(descriptions);
-        }
-    }, [localData]);
+    }, [data]);
 
     useEffect(() => {
         if (expandedProject !== null) {
@@ -56,21 +31,14 @@ const Projects = () => {
     }, [expandedProject]);
 
     const handleProjectClick = (projectId) => {
-        console.log('handleProjectClick triggered with project id:', projectId);
         setExpandedProject((projectExpanded) => (projectExpanded === projectId ? null : projectId));
     };
 
     return (
         <section>
-            {(githubIsLoading || localIsLoading) && (
-                <div className="site-message">Loading projects...</div>
-            )}
-            {(githubError || localError) && (
-                <div className="site-message">
-                    {githubError} {localError}
-                </div>
-            )}
-            {githubData && localData && (
+            {isLoading && <div className="site-message">Loading projects...</div>}
+            {error && <div className="site-message">{error}</div>}
+            {data && (
                 <div className="projects-container global-container-style">
                     <h2 className="repo-label">GitHub Repositories</h2>
                     {projects.map((project) => (
@@ -96,9 +64,9 @@ const Projects = () => {
                             </div>
                             {expandedProject === project.id && (
                                 <div className="project-info" ref={expandedElementRef}>
-                                    <p className="project-description">
-                                        {projectDescriptions[project.name]}
-                                    </p>
+                                    {project.description && (
+                                        <p className="project-description">{project.description}</p>
+                                    )}
                                     <NavLink
                                         className="global-btn-style project-link"
                                         to={project.html_url}
