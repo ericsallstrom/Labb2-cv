@@ -42,6 +42,7 @@
 .site-message {
     color: #000;
     font-size: 2em;
+    padding: 0.5em;
 }
 .global-title-style {
     text-transform: uppercase;
